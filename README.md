@@ -111,3 +111,19 @@ Sources/
     ├── Theme.swift                  # color palette, neon button styles, glass card modifier
     └── SharedViews.swift
 ```
+
+## Results
+<img width="473" height="962" alt="image" src="https://github.com/user-attachments/assets/1a66f2c6-e7d5-4d7f-be77-c2f0c3ea2670" />
+
+## Image Analysis
+<img width="473" height="962" alt="image" src="https://github.com/user-attachments/assets/a08fd73c-ed54-4584-a693-99ead5d8bdc1" />
+
+## Video Analysis
+<img width="473" height="962" alt="image" src="https://github.com/user-attachments/assets/fc18253d-fdba-4f5e-8e2f-9a025633457f" />
+
+## Text Verification
+<img width="473" height="962" alt="image" src="https://github.com/user-attachments/assets/13f455f4-defc-416d-bb03-678bc6c04f38" />
+
+
+
+
