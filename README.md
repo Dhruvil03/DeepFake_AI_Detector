@@ -1,53 +1,41 @@
 # DeepFake AI Detector (iOS)
 
-SwiftUI port of **Proofy**, the Android deepfake/content-authenticity app, rebuilt around a
-self-hosted OpenAI-compatible inference endpoint instead of Google's hosted Gemini API.
-
-## Visual theme
-
-The Android app's icon is just a plain white "P" mark on transparent — no real color data to
-pull from it. The actual Proofy brand palette lives in the project's browser-extension popup
-(`popup.css`), so that's what this app's theme is built from: a dark "neon glass" look.
-
-| Role | Color | Hex |
-|---|---|---|
-| Background | near-black | `#020202` |
-| Primary accent (image/text actions, "authentic" verdict) | neon green | `#00FF88` |
-| Secondary accent (video/audio actions) | neon blue | `#00D1FF` |
-| Danger ("synthetic" verdict) | alert red | `#FF3366` |
-| Inconclusive verdict *(added — not in the original palette, which only defines green/blue/red)* | neon amber | `#FFD23F` |
-| Surfaces | translucent white glass | `rgba(255,255,255,0.03)` + soft border |
-
-Defined in `Sources/Shared/Theme.swift` (`ProofyPalette`, `NeonButtonStyle`,
-`NeonSecondaryButtonStyle`, `.glassCard()`, `.proofyBackground()`) and applied across every
-screen — dashboard cards, buttons, result cards, history rows, and forms.
+A SwiftUI iOS app for AI-assisted content authenticity verification — analyzes images, video,
+text, and audio for signs of AI generation or manipulation, using a configurable
+OpenAI-compatible inference endpoint.
 
 ## What's included
 
 - **Image Analysis** — picks a photo, sends it as `image_url` (base64 data URI), parses a
   structured JSON verdict.
-- **Video Analysis** — picks a video, sends the whole clip as `video_url` (base64 data URI),
-  same pattern as the original working curl example. `MediaEncoder.extractFrames` is also
-  included if you'd rather sample frames client-side instead of uploading the full file (see
-  "Video frame sampling" below).
+- **Video Analysis** — picks a video, sends the whole clip as `video_url` (base64 data URI).
+  `MediaEncoder.extractFrames` is also available if you'd rather sample frames client-side and
+  send a sequence of `image_url` blocks instead — useful for endpoints/models that don't accept
+  `video_url` directly (see "Video frame sampling" below).
 - **Text Verification** — fact-checks a pasted claim.
-- **Audio Analysis** — record in-app or import a file, sent as `audio_url`.
+- **Audio Analysis** — record in-app or import a file. This is a **two-step pipeline**, not a
+  direct audio upload: the clip is first transcribed via a Whisper-compatible
+  `/audio/transcriptions` endpoint (`TranscriptionClient.swift`), then the transcript text is
+  run through the same JSON-verdict analysis as Text Verification. This means it evaluates
+  *what was said*, not *how it sounds* — it cannot detect synthetic-voice artifacts (prosody,
+  spectral signal, cloning tells) directly. The transcript is shown in the UI so this is visible
+  to the user, not hidden behind a confidence score.
 - **History** — local JSON-file history of past analyses, nothing leaves the device except the
-  request to your configured endpoint.
-- **Settings** — endpoint URL / model name / max tokens are editable at runtime, defaulting to:
-  - endpoint: `http://130.191.48.8:8001/v1/chat/completions`
-  - model: `google/gemma-4-26B-A4B-it`
+  requests to your configured endpoints.
+- **Settings** — editable at runtime, no rebuild needed:
+  - **Endpoint URL** — main inference endpoint for image/video/text and the audio transcript
+    analysis step
+  - **Model name**
+  - **API key** *(optional)* — sent as `Authorization: Bearer <key>` if non-empty; leave blank
+    for an unauthenticated self-hosted endpoint
+  - **Max tokens**
 
-## Not included / intentionally different from the Android app
-
-iOS doesn't allow third-party floating overlays or global hardware-key interception, so:
-- **Quick Capture / Overlay Service** → not built here. The cleanest iOS equivalent is a **Share
-  Extension** ("Verify with DeepFake AI Detector" in the system share sheet) or a **Home Screen
-  widget** / **Control Center control** (iOS 18+). Happy to scaffold either as a next step.
-- **Volume-key trigger (Accessibility Service)** → no equivalent API on iOS. Closest UX is
-  **Back Tap** (Settings → Accessibility → Touch → Back Tap → assign a Shortcut).
-- **Source Finder** (reverse image search) → left out because it needs a separate
-  reverse-image-search backend; let me know if you have one and I'll wire it in.
+  Audio transcription uses a **separate, independent endpoint and model**
+  (`transcriptionEndpointURL` / `transcriptionModelName` in `AppSettings.swift`), not exposed in
+  the Settings UI by design — edit those defaults directly in code if you need to point
+  transcription somewhere other than the default. This split exists because a single model
+  often can't do both general chat/vision *and* audio transcription well, so audio can be routed
+  to a different provider than everything else without affecting the rest of the app.
 
 ## Build instructions
 
@@ -64,34 +52,36 @@ open DeepFakeAIDetector.xcodeproj
 Then in Xcode: select the **DeepFakeAIDetector** target → **Signing & Capabilities** → pick
 your team → Run on a simulator or device.
 
+Re-run `xcodegen generate` any time you add or remove source files (it won't pick up new files
+automatically otherwise).
+
 ### Option B — Manual Xcode project
 1. Xcode → File → New → Project → iOS → App. Name it `DeepFakeAIDetector`, interface: SwiftUI,
    no Core Data.
 2. Delete the default `ContentView.swift` and app-entry file Xcode generated.
 3. Drag the entire `Sources/` folder from this download into the project navigator
    ("Copy items if needed" checked).
-4. Replace the auto-generated `Info.plist` entries with the ones in this repo's `Info.plist`
-   (camera/mic/photo-library usage strings + the ATS exception for your endpoint's IP).
+4. Replace the auto-generated `Info.plist` entries with the ones in this repo's `Info.plist`.
 5. Build & run.
 
 ## Before you ship this
 
-1. **Secure the endpoint.** It's currently plain HTTP with no auth. Before App Store
-   submission, put it behind TLS (App Transport Security will otherwise require an exception,
-   which Apple sometimes pushes back on at review) and add an API key/header your app sends.
-2. **Validate detection accuracy.** A general multimodal model isn't a calibrated forensic
-   detector for any of these modalities — build a small eval set of known real/fake samples per
-   modality before trusting confidence scores in front of users. The prompts here are written to
-   make the model conservative ("inconclusive" over guessing), but that's a mitigation, not a fix.
+1. **Secure the endpoint.** An unauthenticated plain-HTTP endpoint needs an `Info.plist` ATS
+   exception (`NSAllowsArbitraryLoads`) — fine for development, but App Store review may push
+   back on it. Before shipping, put the endpoint behind TLS and require the API key field.
+2. **Validate detection accuracy.** This uses a general-purpose multimodal model, not one
+   trained specifically on labeled real/fake datasets — build a labeled eval set of known
+   real/fake samples per modality before trusting confidence scores in front of users.
 3. **Video frame sampling (optional alternative to full-video upload).** If base64-encoding
-   entire video files is too slow/large, swap `VideoAnalysisViewModel` to call
-   `MediaEncoder.extractFrames(from:maxFrames:)` and send N `image_url` blocks instead of one
-   `video_url` block — same JSON contract, cheaper requests.
-4. **Privacy disclosure.** Since media is sent to a third-party-controlled server for analysis,
-   add a clear in-app disclosure of what's transmitted and whether anything is retained
-   server-side.
-5. **App icon.** No icon asset is included — you'll need to design one (the source Proofy icon
-   is just a plain white mark with no real branding to reuse).
+   entire video files is too slow/large, or your model/endpoint doesn't accept `video_url`,
+   swap `VideoAnalysisViewModel` to call `MediaEncoder.extractFrames(from:maxFrames:)` and send
+   N `image_url` blocks instead — same JSON contract, different request shape.
+4. **Privacy disclosure.** Media is sent to your configured endpoint(s) for analysis — add a
+   clear in-app disclosure of what's transmitted and whether anything is retained server-side.
+5. **API key storage.** Currently stored in `UserDefaults` for development convenience. Move to
+   Keychain before sharing this build with anyone else, since this can be a real billable
+   credential.
+6. **App icon.** No icon asset is included — you'll need to design one.
 
 ## Project structure
 
@@ -99,9 +89,13 @@ your team → Run on a simulator or device.
 Sources/
 ├── App/DeepFakeAIDetectorApp.swift  # entry point
 ├── Core/
-│   ├── Networking/                  # InferenceClient, request/response models, MediaEncoder
+│   ├── Networking/
+│   │   ├── InferenceClient.swift        # main chat completions client
+│   │   ├── TranscriptionClient.swift    # audio transcription client (separate endpoint)
+│   │   ├── ChatCompletionModels.swift   # request/response types, InferenceConfig
+│   │   └── MediaEncoder.swift           # base64 data URIs, video frame extraction
 │   ├── Models/AnalysisResult.swift  # verdict/confidence parsing (incl. JSON-from-prose extraction)
-│   ├── Settings/AppSettings.swift   # endpoint/model config, persisted in UserDefaults
+│   ├── Settings/AppSettings.swift   # endpoint/model/API key config, persisted in UserDefaults
 │   ├── Persistence/HistoryStore.swift
 │   └── Prompts/PromptTemplates.swift
 ├── Features/
@@ -109,11 +103,11 @@ Sources/
 │   ├── ImageAnalysis/
 │   ├── VideoAnalysis/
 │   ├── TextVerification/
-│   ├── AudioAnalysis/
+│   ├── AudioAnalysis/               # transcribe-then-analyze pipeline + transcript display
 │   ├── Result/ResultCard.swift      # shared verdict/confidence UI
 │   ├── History/
 │   └── Settings/
 └── Shared/
-    ├── Theme.swift                  # ProofyPalette, neon button styles, glass card modifier
+    ├── Theme.swift                  # color palette, neon button styles, glass card modifier
     └── SharedViews.swift
 ```
