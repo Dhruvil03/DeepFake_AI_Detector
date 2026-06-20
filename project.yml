@@ -1,0 +1,24 @@
+name: DeepFakeAIDetector
+options:
+  bundleIdPrefix: com.yourcompany
+  deploymentTarget:
+    iOS: "16.0"
+targets:
+  DeepFakeAIDetector:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Sources
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: "DeepFake AI Detector"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.yourcompany.deepfakeaidetector
+        SWIFT_VERSION: 5.10
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETSCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ENABLE_PREVIEWS: YES
+        PRODUCT_NAME: "DeepFake AI Detector"

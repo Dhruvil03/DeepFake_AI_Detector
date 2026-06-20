@@ -1,0 +1,496 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		061FDD8C5C7674EF0ECDDD64 /* ChatCompletionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38187E280E6305DA5E12DFA4 /* ChatCompletionModels.swift */; };
+		07246E0308BFEA788889FD8E /* MediaEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E7AF2FB4D0592888BF93AC /* MediaEncoder.swift */; };
+		383FD20707F1703022B362D3 /* InferenceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DA50D66ACF4006082398A4 /* InferenceClient.swift */; };
+		462CA914BFAA1DFCF32FE380 /* PromptTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDD9E1C007EA4D057E06C27 /* PromptTemplates.swift */; };
+		5352E90027C659F349F55966 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF930704F55E8CB103959E9 /* HistoryView.swift */; };
+		55133EA82FE734FC00655875 /* TranscriptionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55133EA72FE734FA00655875 /* TranscriptionClient.swift */; };
+		5BC8A22E0619BA9A0BAA22C5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D70FD69E8E5710C96674A03 /* SettingsView.swift */; };
+		68E34F8EEF06A6302B8DBCE7 /* ResultCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330BA2B87C71228A1D934ED6 /* ResultCard.swift */; };
+		691107C5BC4AB77A27F64699 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8BA3B08E6ACAE767A85498 /* HistoryStore.swift */; };
+		75AD843FC3E8DEAD489CBC18 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C336F0B83B8EB655B0FB32A /* Theme.swift */; };
+		79B568F1D2A4309471B5DAE9 /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E7B9DF73C60C5925B8F07B /* AnalysisResult.swift */; };
+		800CFC49B0D7BC4BB5C90872 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC52FFCC3B5CBA2D0B0095A /* DashboardView.swift */; };
+		9A1E6AC266EA1258504F90D9 /* VideoAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC2D4E78A5C6FAFCF86FA89 /* VideoAnalysisView.swift */; };
+		A41357516049440D7676FFC4 /* AudioAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBDC81A8686FF4107968942 /* AudioAnalysisView.swift */; };
+		C65F97412D1DCB7D39187D8E /* ImageAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B995F4392326D25498EA94B3 /* ImageAnalysisView.swift */; };
+		CDFAE701933A8A09062F0478 /* DeepFakeAIDetectorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0855BBBFBB551B9D561CAF6 /* DeepFakeAIDetectorApp.swift */; };
+		D9AEBAE58CDC8A5A12CA9802 /* SharedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3F8CD63DFC0B8BEEB2FA45 /* SharedViews.swift */; };
+		DDF61AD1CD7D2AB79282AB07 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51480899C916A6B4E330648 /* AppSettings.swift */; };
+		E972C98F757245E74D400097 /* TextVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E11A4AA19C3A00DC116C60 /* TextVerificationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D70FD69E8E5710C96674A03 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2FDD9E1C007EA4D057E06C27 /* PromptTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptTemplates.swift; sourceTree = "<group>"; };
+		330BA2B87C71228A1D934ED6 /* ResultCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCard.swift; sourceTree = "<group>"; };
+		38187E280E6305DA5E12DFA4 /* ChatCompletionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletionModels.swift; sourceTree = "<group>"; };
+		4C336F0B83B8EB655B0FB32A /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		4D8BA3B08E6ACAE767A85498 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		53DA50D66ACF4006082398A4 /* InferenceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceClient.swift; sourceTree = "<group>"; };
+		55133EA72FE734FA00655875 /* TranscriptionClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionClient.swift; sourceTree = "<group>"; };
+		6EC2D4E78A5C6FAFCF86FA89 /* VideoAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAnalysisView.swift; sourceTree = "<group>"; };
+		7CBDC81A8686FF4107968942 /* AudioAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnalysisView.swift; sourceTree = "<group>"; };
+		8AC52FFCC3B5CBA2D0B0095A /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		9CF930704F55E8CB103959E9 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		9E3F8CD63DFC0B8BEEB2FA45 /* SharedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedViews.swift; sourceTree = "<group>"; };
+		A3E7AF2FB4D0592888BF93AC /* MediaEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEncoder.swift; sourceTree = "<group>"; };
+		B995F4392326D25498EA94B3 /* ImageAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalysisView.swift; sourceTree = "<group>"; };
+		C0855BBBFBB551B9D561CAF6 /* DeepFakeAIDetectorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepFakeAIDetectorApp.swift; sourceTree = "<group>"; };
+		D4E11A4AA19C3A00DC116C60 /* TextVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextVerificationView.swift; sourceTree = "<group>"; };
+		D51480899C916A6B4E330648 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		D6DA2B11381ED30CAD49FE54 /* DeepFakeAIDetector.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; name = DeepFakeAIDetector.app; path = "DeepFake AI Detector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E7B9DF73C60C5925B8F07B /* AnalysisResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		06F1554663168593DC80D15B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A0182B7D0952A4F965058E0D /* Models */,
+				A3E061E355BDE171C7CADD0C /* Networking */,
+				54D18204DDA05E32A2910553 /* Persistence */,
+				280E6AB881B731F14279B5D8 /* Prompts */,
+				66C7B98D20F6CD174D702CDA /* Settings */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		280E6AB881B731F14279B5D8 /* Prompts */ = {
+			isa = PBXGroup;
+			children = (
+				2FDD9E1C007EA4D057E06C27 /* PromptTemplates.swift */,
+			);
+			path = Prompts;
+			sourceTree = "<group>";
+		};
+		3CF62AE5F37231252AE15742 /* TextVerification */ = {
+			isa = PBXGroup;
+			children = (
+				D4E11A4AA19C3A00DC116C60 /* TextVerificationView.swift */,
+			);
+			path = TextVerification;
+			sourceTree = "<group>";
+		};
+		4BAA2E2B3DE307EC3FE5C971 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				8AC52FFCC3B5CBA2D0B0095A /* DashboardView.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		54D18204DDA05E32A2910553 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4D8BA3B08E6ACAE767A85498 /* HistoryStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		5BA7F5F52866AAC9CAC4D4AF = {
+			isa = PBXGroup;
+			children = (
+				F2839867E0CEE218AD97291A /* Sources */,
+				69D8A14A23B8FCACB8249721 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6521E2C99310E0701D22CDCB /* History */ = {
+			isa = PBXGroup;
+			children = (
+				9CF930704F55E8CB103959E9 /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		66C7B98D20F6CD174D702CDA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D51480899C916A6B4E330648 /* AppSettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		69D8A14A23B8FCACB8249721 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6DA2B11381ED30CAD49FE54 /* DeepFakeAIDetector.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		94C387A06AD4341CF22F922B /* VideoAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				6EC2D4E78A5C6FAFCF86FA89 /* VideoAnalysisView.swift */,
+			);
+			path = VideoAnalysis;
+			sourceTree = "<group>";
+		};
+		9E015F6B701961F680DF6229 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				330BA2B87C71228A1D934ED6 /* ResultCard.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		A0182B7D0952A4F965058E0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8E7B9DF73C60C5925B8F07B /* AnalysisResult.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3E061E355BDE171C7CADD0C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				55133EA72FE734FA00655875 /* TranscriptionClient.swift */,
+				38187E280E6305DA5E12DFA4 /* ChatCompletionModels.swift */,
+				53DA50D66ACF4006082398A4 /* InferenceClient.swift */,
+				A3E7AF2FB4D0592888BF93AC /* MediaEncoder.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CCFD43986F4B02A8ACDF6C8D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9E3F8CD63DFC0B8BEEB2FA45 /* SharedViews.swift */,
+				4C336F0B83B8EB655B0FB32A /* Theme.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DA09A38172BA258FDB127EF4 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				FF98DFF6239580292DCB080D /* AudioAnalysis */,
+				4BAA2E2B3DE307EC3FE5C971 /* Dashboard */,
+				6521E2C99310E0701D22CDCB /* History */,
+				DE001D23AB7BEB17FD76C64E /* ImageAnalysis */,
+				9E015F6B701961F680DF6229 /* Result */,
+				FD5151102A0F76812626FC48 /* Settings */,
+				3CF62AE5F37231252AE15742 /* TextVerification */,
+				94C387A06AD4341CF22F922B /* VideoAnalysis */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		DA3E4DC0E45A0230FF65A26C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C0855BBBFBB551B9D561CAF6 /* DeepFakeAIDetectorApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DE001D23AB7BEB17FD76C64E /* ImageAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				B995F4392326D25498EA94B3 /* ImageAnalysisView.swift */,
+			);
+			path = ImageAnalysis;
+			sourceTree = "<group>";
+		};
+		F2839867E0CEE218AD97291A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DA3E4DC0E45A0230FF65A26C /* App */,
+				06F1554663168593DC80D15B /* Core */,
+				DA09A38172BA258FDB127EF4 /* Features */,
+				CCFD43986F4B02A8ACDF6C8D /* Shared */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FD5151102A0F76812626FC48 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2D70FD69E8E5710C96674A03 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FF98DFF6239580292DCB080D /* AudioAnalysis */ = {
+			isa = PBXGroup;
+			children = (
+				7CBDC81A8686FF4107968942 /* AudioAnalysisView.swift */,
+			);
+			path = AudioAnalysis;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA182171812A8B522B15D3F4 /* DeepFakeAIDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1920DBC63D3D9A5929F5D582 /* Build configuration list for PBXNativeTarget "DeepFakeAIDetector" */;
+			buildPhases = (
+				87D875EDDCBF4BE92FD95BA0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeepFakeAIDetector;
+			packageProductDependencies = (
+			);
+			productName = DeepFakeAIDetector;
+			productReference = D6DA2B11381ED30CAD49FE54 /* DeepFakeAIDetector.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		634B5F36B0DC7E0B76BE950B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = F2736055D581F679EAB6DE8D /* Build configuration list for PBXProject "DeepFakeAIDetector" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5BA7F5F52866AAC9CAC4D4AF;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 69D8A14A23B8FCACB8249721 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA182171812A8B522B15D3F4 /* DeepFakeAIDetector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87D875EDDCBF4BE92FD95BA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55133EA82FE734FC00655875 /* TranscriptionClient.swift in Sources */,
+				79B568F1D2A4309471B5DAE9 /* AnalysisResult.swift in Sources */,
+				DDF61AD1CD7D2AB79282AB07 /* AppSettings.swift in Sources */,
+				A41357516049440D7676FFC4 /* AudioAnalysisView.swift in Sources */,
+				061FDD8C5C7674EF0ECDDD64 /* ChatCompletionModels.swift in Sources */,
+				800CFC49B0D7BC4BB5C90872 /* DashboardView.swift in Sources */,
+				CDFAE701933A8A09062F0478 /* DeepFakeAIDetectorApp.swift in Sources */,
+				691107C5BC4AB77A27F64699 /* HistoryStore.swift in Sources */,
+				5352E90027C659F349F55966 /* HistoryView.swift in Sources */,
+				C65F97412D1DCB7D39187D8E /* ImageAnalysisView.swift in Sources */,
+				383FD20707F1703022B362D3 /* InferenceClient.swift in Sources */,
+				07246E0308BFEA788889FD8E /* MediaEncoder.swift in Sources */,
+				462CA914BFAA1DFCF32FE380 /* PromptTemplates.swift in Sources */,
+				68E34F8EEF06A6302B8DBCE7 /* ResultCard.swift in Sources */,
+				5BC8A22E0619BA9A0BAA22C5 /* SettingsView.swift in Sources */,
+				D9AEBAE58CDC8A5A12CA9802 /* SharedViews.swift in Sources */,
+				E972C98F757245E74D400097 /* TextVerificationView.swift in Sources */,
+				75AD843FC3E8DEAD489CBC18 /* Theme.swift in Sources */,
+				9A1E6AC266EA1258504F90D9 /* VideoAnalysisView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1A08DC156DB069B51BBE8D7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETSCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.deepfakeaidetector;
+				PRODUCT_NAME = "DeepFake AI Detector";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		570F570A1D7F2605D9FC211A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		718F1C334D4DB0BD028A83A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETSCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.deepfakeaidetector;
+				PRODUCT_NAME = "DeepFake AI Detector";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F1FBA8746C4EF8298DB4DF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1920DBC63D3D9A5929F5D582 /* Build configuration list for PBXNativeTarget "DeepFakeAIDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				718F1C334D4DB0BD028A83A9 /* Debug */,
+				1A08DC156DB069B51BBE8D7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F2736055D581F679EAB6DE8D /* Build configuration list for PBXProject "DeepFakeAIDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				570F570A1D7F2605D9FC211A /* Debug */,
+				8F1FBA8746C4EF8298DB4DF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 634B5F36B0DC7E0B76BE950B /* Project object */;
+}
